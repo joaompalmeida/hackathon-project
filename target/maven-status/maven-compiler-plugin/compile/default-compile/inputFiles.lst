@@ -1,2 +1,4 @@
-/home/joaompalmeida/Desktop/projects/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/TestController.java
+/home/joaompalmeida/Desktop/projects/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/rest/TestController.java
+/home/joaompalmeida/Desktop/projects/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/web/WebTestController.java
+/home/joaompalmeida/Desktop/projects/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/SpringBootstrap.java
 /home/joaompalmeida/Desktop/projects/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/Main.java

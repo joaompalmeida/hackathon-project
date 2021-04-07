@@ -1,3 +1,4 @@
 org/academiadecodigo/asynctomatics/hackathonproject/Main.class
+org/academiadecodigo/asynctomatics/hackathonproject/controller/rest/TestController.class
 org/academiadecodigo/asynctomatics/hackathonproject/SpringBootstrap.class
-org/academiadecodigo/asynctomatics/hackathonproject/controller/TestController.class
+org/academiadecodigo/asynctomatics/hackathonproject/controller/web/WebTestController.class
