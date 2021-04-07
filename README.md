@@ -1,2 +1,2 @@
 # hackathon-project
-Hackathon programming project repository
+Hackathon programming project repository.
