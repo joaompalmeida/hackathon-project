@@ -6,14 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/web")
+@RequestMapping("/")
 public class WebTestController {
 
 	@RequestMapping(method = RequestMethod.GET, path = {"/", ""})
 	public String addCustomer(Model model) {
-		return "/test";
+		return "home";
 	}
 
-
+	@RequestMapping(method = RequestMethod.GET, path = "/enter")
+	public String enterPage(Model model){
+		return "/trolo-saveller/enter";
+	}
 }
 
