@@ -2,6 +2,7 @@ package org.academiadecodigo.asynctomatics.hackathonproject.persistence.dao;
 
 import com.mysql.cj.Session;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Model;
+import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Trip;
 import org.hibernate.SessionFactory;
 import org.hibernate.internal.SessionFactoryImpl;
 
@@ -34,4 +35,10 @@ public abstract class GenericDao<T extends Model> implements Dao<T> {
         this.entityManager = entityManager;
     }
 
+    @Override
+    public T save(T modelObject) {
+
+        return entityManager.merge(modelObject);
+
+    }
 }

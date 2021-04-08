@@ -27,7 +27,7 @@ public class TripDaoImpl extends GenericDao<Trip> implements TripDao{
             case "Low":
             return list.stream().filter(p ->
                     p.getLocationGoal().equals(locationGoal) && p.getLocationType().equals(locationType)
-                            && Integer.parseInt(p.getPrice()) < 200)
+                            && Integer.parseInt(p.getPrice()) <= 200)
                     .collect(Collectors.toList());
             case "Medium":
                 return list.stream().filter(p ->
@@ -37,13 +37,11 @@ public class TripDaoImpl extends GenericDao<Trip> implements TripDao{
             default:
                 return list.stream().filter(p ->
                         p.getLocationGoal().equals(locationGoal) && p.getLocationType().equals(locationType)
-                                && Integer.parseInt(p.getPrice()) > 400)
+                                && Integer.parseInt(p.getPrice()) >= 400)
                         .collect(Collectors.toList());
 
         }
 
-
     }
-
 
 }

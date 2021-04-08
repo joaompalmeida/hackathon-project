@@ -9,6 +9,8 @@ public interface TripService {
 
     Trip getTrip();
 
+    void saveTrip(Trip trip);
+
 
 
 
