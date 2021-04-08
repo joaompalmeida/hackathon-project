@@ -1,7 +1,9 @@
 package org.academiadecodigo.asynctomatics.hackathonproject.persistence.model;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Entity
@@ -12,15 +14,8 @@ public class Traveller extends AbstractModel {
     private String lastName;
     private String email;
     private String phone;
-
-    @OneToMany(
-            cascade = {CascadeType.ALL},
-            orphanRemoval = true,
-            mappedBy = "traveller",
-            fetch = FetchType.EAGER
-    )
-    private List<Trip> trip = new ArrayList<>();
-
+//    private List<Integer> tripId = new ArrayList<>();
+    
     /**
      * Gets the first name of the customer
      *
@@ -93,36 +88,21 @@ public class Traveller extends AbstractModel {
         this.phone = phone;
     }
 
-    public List<Trip> getTrips() {
-        return trip;
-    }
+//    public List<Integer> getTrips() {
+//        return tripId;
+//    }
+//
+//    public void addTrip(Integer trip) {
+//        this.tripId.add(trip);
+////        trip.setTraveller(this);
+//    }
+//
+//    public void removeTrip(Integer trip) {
+//        this.tripId.remove(trip);
+////        trip.setTraveller(null);
+//    }
 
-    public void addTrip(Trip trip) {
-        this.trip.add(trip);
-        trip.setTraveller(this);
-    }
 
-    public void removeTrip(Trip trip) {
-        this.trip.remove(trip);
-        trip.setTraveller(null);
-    }
-
-    /**
-     * @see Object#toString()
-     */
-    @Override
-    public String toString() {
-
-        // printing recipients with lazy loading
-        // and no session will cause issues
-        return "Customer{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", accounts=" + trip +
-                "} " + super.toString();
-    }
 }
 
 

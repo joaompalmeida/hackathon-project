@@ -1,6 +1,7 @@
 package org.academiadecodigo.asynctomatics.hackathonproject.persistence.model;
 
 import javax.persistence.*;
+import javax.xml.stream.Location;
 import java.util.Date;
 
 @Entity
@@ -15,8 +16,7 @@ public class Trip extends AbstractModel {
 	private String hotel;
 	private String price;
 
-	@ManyToOne
-	private Traveller traveller;
+	private Integer travellerId;
 
 	public Date getStartDate() {
 		return startDate;
@@ -81,4 +81,36 @@ public class Trip extends AbstractModel {
 	public void setTraveller(Traveller traveller) {
 		this.traveller = traveller;
 	}
+	@OneToOne
+	private Location location;
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	public Traveller getTraveller() {
+		return traveller;
+	}
+
+	public void setTraveller(Traveller traveller) {
+		this.traveller = traveller;
+	}
+
+	public void setUser(Traveller traveller){
+		this.traveller = traveller;
+	}
+
+
 }
