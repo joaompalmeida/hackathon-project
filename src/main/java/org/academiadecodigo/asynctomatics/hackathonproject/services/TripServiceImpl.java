@@ -1,5 +1,6 @@
 package org.academiadecodigo.asynctomatics.hackathonproject.services;
 
+import org.academiadecodigo.asynctomatics.hackathonproject.controller.TripChoices;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.dao.*;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Trip;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.location.Location;
@@ -54,24 +55,11 @@ public class TripServiceImpl implements TripService {
 
 
     // SETTERS ----------
-    @Autowired
-    public void setLocationDao(LocationDaoImpl locationDao) {
-        this.locationDao = locationDao;
-    }
 
-    @Autowired
-    public void setUserDao(UserDaoImpl userDaoImpl) {
-        this.userDaoImpl = userDaoImpl;
-    }
 
     @Autowired
     public void setTripDaoImpl(TripDaoImpl tripDaoImpl) {
         this.tripDaoImpl = tripDaoImpl;
-    }
-
-    @Autowired
-    public void setHotelDao(HotelDaoImpl hotelDao) {
-        this.hotelDao = hotelDao;
     }
 
     @Override
