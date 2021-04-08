@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
-public class User extends AbstractModel {
+@Table(name = "traveller")
+public class Traveller extends AbstractModel {
 
     private String firstName;
     private String lastName;
@@ -16,10 +16,10 @@ public class User extends AbstractModel {
     @OneToMany(
             cascade = {CascadeType.ALL},
             orphanRemoval = true,
-            mappedBy = "user",
+            mappedBy = "traveller",
             fetch = FetchType.EAGER
     )
-    private List<Trip> trips = new ArrayList<>();
+    private List<Trip> trip = new ArrayList<>();
 
     /**
      * Gets the first name of the customer
@@ -94,17 +94,17 @@ public class User extends AbstractModel {
     }
 
     public List<Trip> getTrips() {
-        return trips;
+        return trip;
     }
 
     public void addTrip(Trip trip) {
-        trips.add(trip);
-        trip.setUser(this);
+        this.trip.add(trip);
+        trip.setTraveller(this);
     }
 
     public void removeTrip(Trip trip) {
-        trips.remove(trip);
-        trip.setUser(null);
+        this.trip.remove(trip);
+        trip.setTraveller(null);
     }
 
     /**
@@ -120,7 +120,7 @@ public class User extends AbstractModel {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", accounts=" + trips +
+                ", accounts=" + trip +
                 "} " + super.toString();
     }
 }

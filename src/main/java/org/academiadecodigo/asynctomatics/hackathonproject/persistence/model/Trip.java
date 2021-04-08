@@ -12,12 +12,12 @@ public class Trip extends AbstractModel {
 	private Date startDate;
 	private Date endDate;
 	@ManyToOne
-	private User user;
+	private Traveller traveller;
 	@OneToOne
 	private Location location;
 
-	public void setUser(User user){
-		this.user = user;
+	public void setTraveller(Traveller traveller){
+		this.traveller = traveller;
 	}
 
 }

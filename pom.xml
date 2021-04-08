@@ -210,7 +210,7 @@
             <server>tomcat</server>
             <username>maven</username>
             <password>maven</password>
-            <path>/trolo-saveller</path>
+            <path>/flashpack</path>
           </configuration>
         </plugin>
       </plugins>
