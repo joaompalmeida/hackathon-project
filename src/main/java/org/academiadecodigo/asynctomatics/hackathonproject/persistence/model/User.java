@@ -107,7 +107,6 @@ public class User extends AbstractModel {
         trip.setUser(null);
     }
 
-
     /**
      * @see Object#toString()
      */
