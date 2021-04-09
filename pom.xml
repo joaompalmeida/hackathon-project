@@ -223,6 +223,8 @@
           <configuration>
             <url>http://localhost:8080/manager/text</url>
             <server>tomcat</server>
+            <username>maven</username>
+            <password>maven</password>
             <path>/inablink</path>
           </configuration>
         </plugin>
