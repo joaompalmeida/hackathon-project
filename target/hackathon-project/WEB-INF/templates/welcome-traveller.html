@@ -1,8 +1,12 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <thymeleaf th:replace="header :: header"/>
-    <link rel="stylesheet" href="../../css/default.css" id="theme-color">
+    <!-- link css -->
+    <link rel="stylesheet" th:href="@{/resources/css/default.css}" />
+    <title>test</title>
+    <!--    <link rel="stylesheet" th:href="/resources/css/header.css" id="theme-color"/>-->
+
 </head>
 
 <body>
@@ -33,7 +37,7 @@
                                 <option value="countryside">Countryside</option>
                             </select>
                             <br><br>
-                            <select class="form-control" id="type" th:field="*{budget}">
+                            <select class="form-control" id="budget" th:field="*{budget}">
                                 <option value="low">Low</option>
                                 <option value="mid">Mid</option>
                                 <option value="high">High</option>
@@ -60,6 +64,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="/resources/js/scripts.js"></script>
     </body>
     </html>

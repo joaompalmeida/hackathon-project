@@ -22,4 +22,8 @@
     <import resource="persistence.xml"/>
     <import resource="presentation.xml"/>
 
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/templates/resources/" />
+
+
+
 </beans>

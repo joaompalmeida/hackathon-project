@@ -1,5 +1,8 @@
 package org.academiadecodigo.asynctomatics.hackathonproject.controller;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TripChoices {
 
     private String locationType;

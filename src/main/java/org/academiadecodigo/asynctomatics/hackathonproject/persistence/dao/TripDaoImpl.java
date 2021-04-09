@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 @Repository
 public class TripDaoImpl extends GenericDao<Trip> implements TripDao{
 
-    public TripDaoImpl(Class modelType) {
-        super(modelType);
+    public TripDaoImpl() {
+        super(Trip.class);
     }
 
     @Override

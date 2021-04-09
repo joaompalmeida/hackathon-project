@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @CrossOrigin
-@RestController
+@Controller
 @RequestMapping("/trip")
 public class TripControllerWeb {
 
@@ -29,6 +30,17 @@ public class TripControllerWeb {
     @Autowired
     public void setTripService(TripServiceImpl tripService) {
         this.tripService = tripService;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    public String tripForm(Model model) {
+
+        System.out.println("\nTRIP FORM\n");
+
+        model.addAttribute("tripchoices", new TripChoices());
+        //model.addAttribute("traveller", "John");
+
+        return "welcome-traveller";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
