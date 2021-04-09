@@ -33,4 +33,12 @@ public class TripChoices {
         this.budget = budget;
     }
 
+    @Override
+    public String toString() {
+        return "TripChoices{" +
+                "locationType='" + locationType + '\'' +
+                ", locationGoal='" + locationGoal + '\'' +
+                ", budget='" + budget + '\'' +
+                '}';
+    }
 }

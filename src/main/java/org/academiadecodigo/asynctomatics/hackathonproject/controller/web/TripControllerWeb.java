@@ -48,12 +48,11 @@ public class TripControllerWeb {
     public String tripChoices(@Valid @ModelAttribute("tripchoices") TripChoices tripChoices, Model model) {
 
         System.out.println("\nTRIP CHOICES\n");
-
         tripService.createTripList(tripChoices);
-        Trip trip = tripService.getTrip();
+        //Trip trip = tripService.getTrip();
 
-        model.addAttribute("location", trip.getLocation());
-        model.addAttribute("price", trip.getPrice());
+
+        model.addAttribute("trip", tripService.getTrip());
         model.addAttribute("counter", "0");
 
         return "roulette";
@@ -69,7 +68,7 @@ public class TripControllerWeb {
         }
 
         Trip trip = tripService.getTrip();
-
+        System.out.println("esFGEWRGADRGEADRGGFSDR" + trip.toString());
         model.addAttribute("location", trip.getLocation());
         model.addAttribute("price", trip.getPrice());
         model.addAttribute("counter", (n + 1) + "");

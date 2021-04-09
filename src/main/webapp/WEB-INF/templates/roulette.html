@@ -1,27 +1,30 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <thymeleaf th:replace="header :: header"/>
-  <link rel="stylesheet" href="../../css/roulette.css" id="theme-color">
+    <thymeleaf th:replace="header :: header"/>
+
+    <link rel="stylesheet" th:href="@{/resources/css/roulette.css}" id="theme-color">
 </head>
 
 <body style="background-color: #000000">
 
 <div class="circle">
-  <div class="circle__inner">
-    <div class="circle__wrapper">
-      <div class="circle__content">
-        <span th:text="${location}"></span>
-        <span th:text="${price}"></span>
-        <p style="font-weight: bold;">Gerês</p>
-        <p style="font-weight: bold;">300€</p>
-      </div>
+    <div class="circle__inner">
+        <div class="circle__wrapper">
+            <div class="circle__content" th:object="${trip}">
+
+                <span th:utext="${trip.location}"></span>
+                <span th:utext="${price}"></span>
+
+                <p style="font-weight: bold;">Gerês</p>
+                <p style="font-weight: bold;">300€</p>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary" type="button">Stay</button>
+            <button class="btn btn-primary" type="button">Go</button>
+        </div>
     </div>
-    <div class="d-grid gap-2 d-md-block">
-      <button class="btn btn-primary" type="button">Stay</button>
-      <button class="btn btn-primary" type="button">Go</button>
-    </div>
-  </div>
 </div>
 </body>
 </html>

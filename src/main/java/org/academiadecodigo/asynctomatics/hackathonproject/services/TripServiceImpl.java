@@ -30,14 +30,13 @@ public class TripServiceImpl implements TripService {
         tripList = tripDaoImpl.getTripList(tripChoices.getLocationGoal(),
                 tripChoices.getLocationType(), tripChoices.getBudget());
 
-        System.out.println(tripList.size() + " ololgcfhjghjo " + tripList.get(0));
+
 
         while(tripList.size() > 3) {
 
             tripList.remove((int) Math.floor(Math.random() * tripList.size()));
 
         }
-        System.out.println(tripList.size() + " ololo " + tripList.get(0));
     }
 
     @Override
