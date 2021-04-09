@@ -14,6 +14,7 @@ public class Traveller extends AbstractModel {
     private String lastName;
     private String email;
     private String phone;
+    private String password;
 //    private List<Integer> tripId = new ArrayList<>();
     
     /**
@@ -88,7 +89,15 @@ public class Traveller extends AbstractModel {
         this.phone = phone;
     }
 
-//    public List<Integer> getTrips() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    //    public List<Integer> getTrips() {
 //        return tripId;
 //    }
 //

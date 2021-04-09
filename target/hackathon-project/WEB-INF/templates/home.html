@@ -1,21 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>flashPack</title>
+    <thymeleaf th:replace="header :: header"/>
+    <!-- link css -->
+    <link rel="stylesheet" th:href="@{/resources/css/default.css}" />
+    <title>test</title>
+    <!--    <link rel="stylesheet" th:href="/resources/css/header.css" id="theme-color"/>-->
 
-    <!--Inter UI font-->
-    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
-
-    <!--vendors styles-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-
-    <!-- Bootstrap CSS / Color Scheme -->
-    <link rel="stylesheet" href="../../css/default.css" id="theme-color">
 </head>
 <body>
 
@@ -28,9 +19,9 @@
             <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
                 <h1 class="heading-black">flashPack</h1>
                 <p class="lead py-3">Solo travelling with a twist</p>
-                <button class="btn btn-primary d-inline-flex flex-row align-items-center">
+                <a class="btn btn-primary d-inline-flex flex-row align-items-center" th:href="@{/in}" type="button">
                     Get started now
-                </button>
+                </a>
             </div>
         </div>
     </div>

@@ -80,4 +80,18 @@ public class Trip extends AbstractModel {
 	public void setTravellerId(Integer travellerId) {
 		this.travellerId = travellerId;
 	}
+
+	@Override
+	public String toString() {
+		return "Trip{" +
+				"startDate=" + startDate +
+				", endDate=" + endDate +
+				", location='" + location + '\'' +
+				", locationGoal='" + locationGoal + '\'' +
+				", locationType='" + locationType + '\'' +
+				", hotel='" + hotel + '\'' +
+				", price='" + price + '\'' +
+				", travellerId=" + travellerId +
+				'}';
+	}
 }

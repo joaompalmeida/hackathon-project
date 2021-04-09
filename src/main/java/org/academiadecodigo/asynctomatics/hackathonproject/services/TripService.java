@@ -12,7 +12,4 @@ public interface TripService {
     void saveTrip(Trip trip);
 
 
-
-
-
 }

@@ -2,6 +2,7 @@ package org.academiadecodigo.asynctomatics.hackathonproject.controller.web;
 
 import org.academiadecodigo.asynctomatics.hackathonproject.controller.TripChoices;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Trip;
+import org.academiadecodigo.asynctomatics.hackathonproject.services.TripService;
 import org.academiadecodigo.asynctomatics.hackathonproject.services.TripServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -25,10 +26,10 @@ import java.util.List;
 @RequestMapping("/trip")
 public class TripControllerWeb {
 
-    private TripServiceImpl tripService;
+    private TripService tripService;
 
     @Autowired
-    public void setTripService(TripServiceImpl tripService) {
+    public void setTripService(TripService tripService) {
         this.tripService = tripService;
     }
 

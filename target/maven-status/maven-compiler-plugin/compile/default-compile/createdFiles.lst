@@ -7,12 +7,12 @@ org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/TripDaoImpl.
 org/academiadecodigo/asynctomatics/hackathonproject/controller/web/TripControllerWeb.class
 org/academiadecodigo/asynctomatics/hackathonproject/services/TripServiceImpl.class
 org/academiadecodigo/asynctomatics/hackathonproject/services/TravellerService.class
-org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/LodgingDao.class
 org/academiadecodigo/asynctomatics/hackathonproject/controller/web/MainController.class
+org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/LodgingDao.class
 org/academiadecodigo/asynctomatics/hackathonproject/command/LodgingDto.class
 org/academiadecodigo/asynctomatics/hackathonproject/services/TripService.class
-org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/TripDao.class
 org/academiadecodigo/asynctomatics/hackathonproject/Main.class
+org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/TripDao.class
 org/academiadecodigo/asynctomatics/hackathonproject/controller/TripChoices.class
 org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/TravellerDaoImpl.class
 org/academiadecodigo/asynctomatics/hackathonproject/services/TravellerServiceImpl.class
@@ -20,4 +20,5 @@ org/academiadecodigo/asynctomatics/hackathonproject/persistence/model/AbstractMo
 org/academiadecodigo/asynctomatics/hackathonproject/controller/web/WebTestController.class
 org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/GenericDao.class
 org/academiadecodigo/asynctomatics/hackathonproject/SpringBootstrap.class
+org/academiadecodigo/asynctomatics/hackathonproject/controller/web/TravellerController.class
 org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/Dao.class

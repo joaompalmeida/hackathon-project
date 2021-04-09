@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <thymeleaf th:replace="header :: header"/>
   <link rel="stylesheet" href="../../css/roulette.css" id="theme-color">
@@ -11,6 +11,8 @@
   <div class="circle__inner">
     <div class="circle__wrapper">
       <div class="circle__content">
+        <span th:text="${location}"></span>
+        <span th:text="${price}"></span>
         <p style="font-weight: bold;">Gerês</p>
         <p style="font-weight: bold;">300€</p>
       </div>

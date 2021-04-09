@@ -8,7 +8,7 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>Hackathon Project</display-name>
+  <display-name>In A Blink</display-name>
 
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
@@ -44,7 +44,7 @@
 
   <filter-mapping>
     <filter-name>encodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
+    <url-pattern>/</url-pattern>
   </filter-mapping>
 
 

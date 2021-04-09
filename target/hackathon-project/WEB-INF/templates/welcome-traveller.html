@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <thymeleaf th:replace="header :: header"/>
     <!-- link css -->
@@ -14,7 +14,8 @@
         <div class="container">
             <div class="row vh-md-100">
                 <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
-                    <h2 class="inner-heading">Welcome John</h2>
+                    <!--<h2 class="inner-heading" th:object="${traveller}" th:text="${traveller.firstName}"></h2>-->
+                    <h2 class="inner-heading">Trip Details</h2>
                     <br>
 
                     <div class="form-group">
@@ -23,30 +24,34 @@
                             <p> </p>
                         </div>
 
-                        <div class="form" th:object="${tripchoices}" th:action="@{'/trip'}" method="post">
+
+                        <form class="form" th:object="${tripchoices}" th:action="@{'/trip'}" method="post">
 
                             <select class="form-control" id="goal" th:field="*{locationGoal}">
+                                <option value="">What type of trip?</option>
                                 <option value="culture">Culture</option>
                                 <option value="relaxation">Relaxation</option>
                                 <option value="action">Action</option>
                             </select>
                             <br><br>
                             <select class="form-control" id="type" th:field="*{locationType}">
+                                <option value="">Where is the scenery?</option>
                                 <option value="urban">Urban</option>
                                 <option value="beach">Beach</option>
                                 <option value="countryside">Countryside</option>
                             </select>
                             <br><br>
                             <select class="form-control" id="budget" th:field="*{budget}">
+                                <option value="" >How's the budget?</option>
                                 <option value="low">Low</option>
                                 <option value="mid">Mid</option>
                                 <option value="high">High</option>
                             </select>
                             <br>
                             <div>
-                                <button type="submit" class="btn btn-primary d-inline-flex flex-row align-items-center" name="action" value="save">Submit</button>
+                                <button type="submit" class="btn btn-primary d-inline-flex flex-row align-items-center" name="action" value="submit">Submit</button>
                             </div>
-                        </div>
+                        </form>
 
                         <div class="group1">
                             <p> </p>
