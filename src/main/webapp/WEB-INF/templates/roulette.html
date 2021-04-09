@@ -1,30 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <thymeleaf th:replace="header :: header"/>
+    <title>Trip</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
 
-    <link rel="stylesheet" th:href="@{/resources/css/roulette.css}" id="theme-color">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script modelType="application/javascript" async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="resources/js/scripts.js"></script>
+    <script src="resources/js/countdown.js"></script>
+    <link rel="stylesheet" th:href="@{/resources/css/default.css}">
+    <title>BlinkRoulette</title>
 </head>
 
-<body style="background-color: #000000">
-
-<div class="circle">
-    <div class="circle__inner">
-        <div class="circle__wrapper">
-            <div class="circle__content" th:object="${trip}">
-
-                <span th:utext="${trip.location}"></span>
-                <span th:utext="${price}"></span>
-
-                <p style="font-weight: bold;">Gerês</p>
-                <p style="font-weight: bold;">300€</p>
+<body>
+<section class="py-7 bg-dark section-angle top-right bottom-right" id="pricing" style="background-color: #11171a">
+    <div class="container" style="background-color: #11171a">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2 class="text-white heading-black">Your Blink Roulette</h2>
             </div>
         </div>
-        <div class="d-grid gap-2 d-md-block">
-            <button class="btn btn-primary" type="button">Stay</button>
-            <button class="btn btn-primary" type="button">Go</button>
+        <!--pricing tables-->
+        <div class="row pt-5 pricing-table">
+            <div class="col-12 mx-auto">
+                <div class="card-deck pricing-table">
+                    <div class="card">
+                        <div class="card-body" style="display: flex; align-items: center; justify-content: flex-end; background-color: #11171a">
+                            <a href="#" class="btn btn-primary">
+                                stay
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="align-items:center; background-color: #11171a">
+                            <div class="trip-roulette">
+                                <div class="circle__content" th:object="${trip}">
+
+                                    <span th:utext="${trip.location}"></span>
+                                    <span th:utext="${trip.price}"></span>
+
+
+                                </div>
+                            </div>
+                            <div class="countdown" style="color:white">
+                                <p id="demo" style="text-align: center; font-size: 60px;margin-top: 0px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body" style="display: flex; align-items: center; justify-content: flex-start; background-color: #11171a">
+                            <a href="#" class="btn btn-primary">
+                                GO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 </body>
 </html>
