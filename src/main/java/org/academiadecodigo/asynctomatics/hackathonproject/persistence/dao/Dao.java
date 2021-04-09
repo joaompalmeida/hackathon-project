@@ -7,4 +7,5 @@ import javax.persistence.EntityManager;
 public interface Dao<T> {
 
     T save(T modelObject);
+
 }

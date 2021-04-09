@@ -5,7 +5,7 @@ import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Tri
 
 import java.util.List;
 
-public interface TripDao {
+public interface TripDao extends Dao<Trip>{
 
     public List<Trip> getTripList(String locationGoal, String locationType, String budget);
 
