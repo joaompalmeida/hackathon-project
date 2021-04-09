@@ -4,9 +4,12 @@ import org.academiadecodigo.asynctomatics.hackathonproject.controller.TripChoice
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.dao.*;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Service
 public class TripServiceImpl implements TripService {
 
     // PROPERTIES ----------

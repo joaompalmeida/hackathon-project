@@ -2,7 +2,6 @@ package org.academiadecodigo.asynctomatics.hackathonproject.controller.rest;
 
 import org.academiadecodigo.asynctomatics.hackathonproject.controller.TripChoices;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Trip;
-import org.academiadecodigo.asynctomatics.hackathonproject.services.BookingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

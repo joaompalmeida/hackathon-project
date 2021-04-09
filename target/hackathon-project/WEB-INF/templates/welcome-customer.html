@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <thymeleaf th:replace="header :: header"/>
+    <link rel="stylesheet" href="../../css/default.css" id="theme-color">
+</head>
+
+<body>
+    <section class="py-7 py-md-0 bg-hero" id="home">
+        <div class="container">
+            <div class="row vh-md-100">
+                <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+                    <h2 class="inner-heading">Welcome John</h2>
+                    <br>
+
+                    <div class="form-group">
+
+                        <div class="group1">
+                            <p> </p>
+                        </div>
+
+                        <div class="form" th:object="${tripchoices}" th:action="@{'/trip'}" method="post">
+
+                            <select class="form-control" id="goal" th:field="*{locationGoal}">
+                                <option value="culture">Culture</option>
+                                <option value="relaxation">Relaxation</option>
+                                <option value="action">Action</option>
+                            </select>
+                            <br><br>
+                            <select class="form-control" id="type" th:field="*{locationType}">
+                                <option value="urban">Urban</option>
+                                <option value="beach">Beach</option>
+                                <option value="countryside">Countryside</option>
+                            </select>
+                            <br><br>
+                            <select class="form-control" id="type" th:field="*{budget}">
+                                <option value="low">Low</option>
+                                <option value="mid">Mid</option>
+                                <option value="high">High</option>
+                            </select>
+                            <br>
+                            <div>
+                                <button type="submit" class="btn btn-primary d-inline-flex flex-row align-items-center" name="action" value="save">Submit</button>
+                            </div>
+                        </div>
+
+                        <div class="group1">
+                            <p> </p>
+                        </div>
+
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
+    </body>
+    </html>
