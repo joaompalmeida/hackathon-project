@@ -49,10 +49,8 @@ public class TripControllerWeb {
 
         System.out.println("\nTRIP CHOICES\n");
         tripService.createTripList(tripChoices);
-        //Trip trip = tripService.getTrip();
 
-
-        model.addAttribute("trip", tripService.getTrip());
+        model.addAttribute("trip", tripService.getTrip(0));
         model.addAttribute("counter", "0");
 
         return "roulette";
@@ -61,18 +59,34 @@ public class TripControllerWeb {
     @RequestMapping(method = RequestMethod.GET, path = "/roulette/{n}")
     public String tripRoulette(@PathVariable Integer n, Model model) {
 
-        System.out.println("\nROULETTE\n");
+        System.out.println("\nROULETTE: " + n + "\n");
 
-        if (n > 2) {
+        if (n >= 2) {
             return "nextweek";
         }
 
-        Trip trip = tripService.getTrip();
-        System.out.println("esFGEWRGADRGEADRGGFSDR" + trip.toString());
-        model.addAttribute("location", trip.getLocation());
-        model.addAttribute("price", trip.getPrice());
-        model.addAttribute("counter", (n + 1) + "");
+        model.addAttribute("trip", tripService.getTrip(++n));
+        model.addAttribute("counter", (n) + "");
 
         return "roulette";
     }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/roulette/pay/{n}")
+    public String tripPay(@PathVariable Integer n, Model model) {
+
+        System.out.println("\nPay: " + tripService.getTrip(n) + "\n");
+
+        model.addAttribute("counter", (n) + "");
+
+        return "payment";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/roulette/pay/{n}")
+    public String tripGo(@PathVariable Integer n, Model model) {
+
+        System.out.println("\nGO: " + tripService.getTrip(n) + "\n");
+
+        return "congrats";
+    }
+
 }

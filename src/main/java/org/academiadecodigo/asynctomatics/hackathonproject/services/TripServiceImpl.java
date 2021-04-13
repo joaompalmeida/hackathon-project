@@ -30,8 +30,6 @@ public class TripServiceImpl implements TripService {
         tripList = tripDaoImpl.getTripList(tripChoices.getLocationGoal(),
                 tripChoices.getLocationType(), tripChoices.getBudget());
 
-
-
         while(tripList.size() > 3) {
 
             tripList.remove((int) Math.floor(Math.random() * tripList.size()));
@@ -40,18 +38,8 @@ public class TripServiceImpl implements TripService {
     }
 
     @Override
-    public Trip getTrip() {
-
-        if (tripCount <= 3) {
-
-            return tripList.get(tripCount++);
-
-        }
-
-        tripCount = 0;
-        return tripList.get(tripCount);
-
-
+    public Trip getTrip(int i) {
+        return tripList.get(i);
     }
 
     @Transactional
@@ -59,7 +47,6 @@ public class TripServiceImpl implements TripService {
     public void saveTrip(Trip trip) {
 
         tripDaoImpl.save(trip);
-
     }
 
 

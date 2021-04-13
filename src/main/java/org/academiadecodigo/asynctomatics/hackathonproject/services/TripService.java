@@ -7,7 +7,7 @@ public interface TripService {
 
     void createTripList(TripChoices tripChoices);
 
-    Trip getTrip();
+    Trip getTrip(int i);
 
     void saveTrip(Trip trip);
 

@@ -1,76 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Payment Details</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
-</head>
-
-  <!-- Bootstrap CSS / Color Scheme -->
-  <link rel="stylesheet" href="css/payment.css" id="theme-color">
-
+  <thymeleaf th:replace="header :: header"/>
+  <!-- link css -->
+  <link rel="stylesheet" th:href="@{/resources/css/default.css}" />
+  <title>In a Blink</title>
 </head>
 
 <body style="background-color: black">
-<div class="container-fluid">
-  <header>
+<section class="py-7 py-md-0 bg-hero" id="home">
+  <div class="container">
+    <div class="row vh-md-100">
+      <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+        <!--<h2 class="inner-heading" th:object="${traveller}" th:text="${traveller.firstName}"></h2>-->
+        <h2 class="inner-heading">Confirm Purchase</h2>
+        <br>
 
-  </header>
-  <div class="creditCardForm">
-    <div class="heading">
-      <h1>Confirm Purchase</h1>
-    </div>
-    <div class="payment">
-      <form>
-        <div class="form-group owner">
-          <label for="owner">Owner</label>
-          <input type="text" class="form-control" id="owner">
-        </div>
-        <div class="form-group CVV">
-          <label for="cvv">CVV</label>
-          <input type="text" class="form-control" id="cvv">
-        </div>
-        <div class="form-group" id="card-number-field">
-          <label for="cardNumber">Card Number</label>
-          <input type="text" class="form-control" id="cardNumber">
-        </div>
-        <div class="form-group" id="expiration-date">
-          <label>Expiration Date</label>
-          <select style="background-color: lightgray">
-            <option value="01">January</option>
-            <option value="02">February </option>
-            <option value="03">March</option>
-            <option value="04">April</option>
-            <option value="05">May</option>
-            <option value="06">June</option>
-            <option value="07">July</option>
-            <option value="08">August</option>
-            <option value="09">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <select style="background-color: lightgray">
-            <option value="16"> 2021</option>
-            <option value="17"> 2022</option>
-            <option value="18"> 2023</option>
-            <option value="19"> 2024</option>
-            <option value="20"> 2025</option>
-            <option value="21"> 2026</option>
-          </select>
-        </div>
+        <div class="form-group">
 
-        <div class="form-group" id="pay-now">
-          <button type="submit" class="btn btn-default" id="confirm-purchase" style="background-color: #1de9b6">Confirm</button>
+          <div class="group1">
+            <p> </p>
+          </div>
+
+              <form class="form" th:action="@{'/trip/roulette/pay/' + ${counter}}" method="post">
+                  <p class="small-heading"> Owner </p>
+                  <input type="text" class="form-control" id="owner">
+                <br><br>
+                  <p class="small-heading"> Card Number </p>
+                  <input type="text" class="form-control" id="cardNumber">
+                <br><br>
+                  <p class="small-heading"> CVV </p>
+                  <input type="text" class="form-control" id="cvv">
+                <br><br>
+                  <p class="small-heading"> Expiration Date </p>
+                  <select class="form-control" style="background-color: lightgray">
+                    <option value="01">January</option>
+                    <option value="02">February </option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <select class="form-control" style="background-color: lightgray">
+                    <option value="16"> 2021</option>
+                    <option value="17"> 2022</option>
+                    <option value="18"> 2023</option>
+                    <option value="19"> 2024</option>
+                    <option value="20"> 2025</option>
+                    <option value="21"> 2026</option>
+                  </select>
+                <br><br>
+                <div>
+                  <button type="submit" class="btn btn-primary d-inline-flex flex-row align-items-center" name="action" value="submit">Confirm</button>
+                </div>
+              </form>
+
+          <div class="group1">
+            <p> </p>
+          </div>
+
         </div>
-      </form>
+      </div>
     </div>
   </div>
+</section>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="resources/js/scripts.js"></script>
 
 </body>
 </html>
