@@ -4,7 +4,7 @@ This was the project we developed for our Hackathon, the final event of our prog
 
 ## The Idea
 
-We were given a theme and a song to extrapolate from. The theme was 'Solo Traveller' and the song was 'Should i stay or should i go' by 'The Clash'. We took the key concept of the song, which in our opinion focuses a lot on the idea of stay or go, and develop In A Blink - A travel app, for adventurous, impulsive and undecided people. 
+We were given a theme and a song to extrapolate from. The theme was 'Farewell' and the song was 'Should i stay or should i go' by 'The Clash'. We took the key concept of the song, which in our opinion focuses a lot on the idea of stay or go, and develop In A Blink - A travel app, for adventurous, impulsive and undecided people. 
 
 In A Blink is a website where we can book trips, with no worries about dates or accommodation, we only have to insert some preferences, such as the typer of the trip (cultural, rest or adventure), the scenery (urban, beach or countryside) and of course, the budget. After filling in the preferences, 3 different destinations will be drawn to us, one at a time. We will have 30 seconds to decide whether we want to choose that destination or move on to the next. After 3 "stay's", we are not given any more options and we will only be able to raffle new ones for the following week. If we choose a destination, we will proceed to the payment part, and nowhere will we be informed of the place where we will be staying. We will only know the place, hours before the outward journey.
 
