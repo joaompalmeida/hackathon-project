@@ -18,7 +18,7 @@ Java, Linux, Windows, Spring MVC, Hibernate, MySQL, Tomcat, Maven, Git, Scrum, H
 
 ## Connect to our application
 
-[InABlink](inablink.herokuapp.com)
+[InABlink](https://inablink.herokuapp.com/)
 
 ## Authors
 
