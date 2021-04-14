@@ -34,7 +34,7 @@
                 <div class="card-deck pricing-table">
                     <div class="card">
                         <div class="card-body" style="display: flex; align-items: center; justify-content: flex-end; background-color: #11171a">
-                            <a class="btn btn-primary" th:href="@{'/trip/roulette/' + ${counter}}" type="button">
+                            <a id="save-button" class="btn btn-primary" th:href="@{'/trip/roulette/' + ${counter}}" type="button">
                                 stay
                             </a>
                         </div>
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="countdown" style="color:white">
-                                <p id="demo" style="text-align: center; font-size: 60px;margin-top: 0px;"></p>
+                                <p id="counter" style="text-align: center; font-size: 60px;margin-top: 0px;"></p>
                             </div>
                         </div>
                     </div>

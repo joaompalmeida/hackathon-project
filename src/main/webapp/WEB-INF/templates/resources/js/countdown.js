@@ -17,11 +17,12 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = seconds;
+    document.getElementById("counter").innerHTML = seconds;
 
     // If the count down is over, write some text
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
+        document.getElementById("counter").innerHTML = "EXPIRED";
+        document.getElementById("save-button").click();
     }
 }, 1000);
