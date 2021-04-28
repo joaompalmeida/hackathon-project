@@ -4,6 +4,7 @@ import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Tra
 
 public interface TravellerDao {
 
-    Traveller get(String email);
+    Traveller get(int id);
+    Traveller getByEmail(String email);
 
 }

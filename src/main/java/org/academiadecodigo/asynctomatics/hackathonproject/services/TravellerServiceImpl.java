@@ -17,15 +17,22 @@ public class TravellerServiceImpl implements TravellerService{
         this.travellerDao = travellerDao;
     }
 
-    @Override
-    public Traveller getTraveller(String email) {
-        return travellerDao.get(email);
-    }
-
     @Transactional
     @Override
     public void save(Traveller traveller) {
         travellerDao.save(traveller);
+    }
+
+    @Transactional
+    @Override
+    public Traveller getTravellerByEmail(String email) {
+        return travellerDao.getByEmail(email);
+    }
+
+    @Transactional
+    @Override
+    public Traveller getTravellerById(int id) {
+        return travellerDao.get(id);
     }
 
 }
