@@ -4,8 +4,10 @@ import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Tra
 
 public interface TravellerService {
 
-    Traveller getTraveller(String Email);
-
     void save(Traveller traveller);
+
+    Traveller getTravellerByEmail(String email);
+
+    Traveller getTravellerById(int id);
 
 }

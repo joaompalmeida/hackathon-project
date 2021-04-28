@@ -26,10 +26,10 @@ public class TravellerController {
         this.travellerService = travellerService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/log", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String signInLogin(Model model) {
 
-        System.out.println("\n" + new Traveller() + "\n");
+        System.out.println("\nNEW Traveller\n");
 
         model.addAttribute("travellerlogin", new Traveller());
         model.addAttribute("travellersignin", new Traveller());
@@ -39,27 +39,65 @@ public class TravellerController {
 
     @RequestMapping(method = RequestMethod.POST, path = "/signin")
     public String signIn(@ModelAttribute("travellersignin") Traveller traveller, Model model) {
-        travellerService.save(traveller);
 
-        System.out.println("------------------------------------------");
-        System.out.println("\n" + traveller + "\n");
-        System.out.println("\n" + traveller.getFirstName() + "\n");
+        String[] pass = traveller.getPassword().split(",");
 
-        model.addAttribute("traveller", traveller.getFirstName());
-        model.addAttribute("tripchoices", new TripChoices());
-        return "welcome-traveller";
+        if (validatePhone(traveller.getPhone()) && validateNewEmail(traveller.getEmail()) && validate(traveller.getFirstName()) && validate(traveller.getLastName()) && validateNewPassword(pass)) {
+
+            traveller.setPassword(pass[0]);
+            travellerService.save(traveller);
+
+            System.out.println("-----------------signIn------------------------");
+            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
+            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
+
+            model.addAttribute("traveller", traveller.getFirstName());
+            model.addAttribute("tripchoices", new TripChoices());
+            return "welcome-traveller";
+        }
+
+        return "redirect:/in";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/login")
     public String logIn(@Valid @ModelAttribute("travellerlogin") Traveller traveller, Model model) {
 
-        System.out.println("------------------------------------------");
-        System.out.println("\n" + traveller + "\n");
-        System.out.println("\n" + traveller.getFirstName() + "\n");
+        if (validateLogIn(traveller)) {
 
-        model.addAttribute("traveller", traveller.getFirstName());
-        model.addAttribute("tripchoices", new TripChoices());
+            System.out.println("-------------------logIn----------------------");
+            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
+            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
 
-        return "welcome-traveller";
+            model.addAttribute("traveller", traveller.getFirstName());
+            model.addAttribute("tripchoices", new TripChoices());
+
+            return "welcome-traveller";
+        }
+
+        return "redirect:/in";
     }
+
+    private boolean validatePhone (String input) {
+        return validate(input) && input.length() >= 9;
+    }
+
+    private boolean validateNewPassword (String[] input) {
+        return validate(input[0]) && input[0].equals(input[1]);
+    }
+
+    private boolean validateNewEmail (String input) { return validate(input) && travellerService.getTravellerByEmail(input) == null; }
+
+    private boolean validateLogIn (Traveller traveller) {
+
+        String email = traveller.getEmail();
+        String pass = traveller.getPassword();
+        Traveller ActualTraveller = travellerService.getTravellerByEmail(email);
+
+        return validate(pass) && validate(email) && ActualTraveller != null && pass.equals(ActualTraveller.getPassword());
+    }
+
+    private boolean validate (String input) {
+        return input != null && !input.isEmpty();
+    }
+
 }

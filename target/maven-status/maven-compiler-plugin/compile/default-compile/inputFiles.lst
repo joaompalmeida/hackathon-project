@@ -2,13 +2,11 @@
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/services/TripService.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/persistence/model/Trip.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/web/TravellerController.java
-/home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/Main.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/web/MainController.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/TravellerDaoImpl.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/TripChoices.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/command/TripDto.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/persistence/dao/Dao.java
-/home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/web/WebTestController.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/controller/web/TripControllerWeb.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/persistence/model/Model.java
 /home/jose/Desktop/LocalRep/AdC/me/hackathon-project/src/main/java/org/academiadecodigo/asynctomatics/hackathonproject/persistence/model/AbstractModel.java
