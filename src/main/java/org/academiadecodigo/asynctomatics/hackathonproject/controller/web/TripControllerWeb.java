@@ -36,18 +36,21 @@ public class TripControllerWeb {
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String tripForm(Model model) {
 
-        System.out.println("\nTRIP FORM\n");
-
-        model.addAttribute("tripchoices", new TripChoices());
-        //model.addAttribute("traveller", "John");
-
-        return "welcome-traveller";
+//        System.out.println("\nTRIP FORM\n");
+//        System.out.println("test id " + model.containsAttribute("traveller_id"));
+//
+//        model.addAttribute("tripchoices", new TripChoices());
+//        //model.addAttribute("traveller", "John");
+//
+//        return "redirect/welcome-traveller";
+        return "redirect:/in";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public String tripChoices(@Valid @ModelAttribute("tripchoices") TripChoices tripChoices, Model model) {
 
         System.out.println("\nTRIP CHOICES\n");
+        System.out.println("test id " + model.containsAttribute("traveller_id"));
         tripService.createTripList(tripChoices);
 
         model.addAttribute("trip", tripService.getTrip(0));

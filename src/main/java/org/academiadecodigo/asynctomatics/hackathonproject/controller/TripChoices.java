@@ -5,9 +5,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class TripChoices {
 
+    private Integer travellerId;
     private String locationType;
     private String locationGoal;
     private String budget;
+
+//    public TripChoices(Integer customerId){
+//        setTravellerId(customerId);
+//    }
+
+    public void setTravellerId(int travellerId) {
+        this.travellerId = travellerId;
+    }
+
+    public int getTravellerId() {
+        return travellerId;
+    }
 
     public String getLocationType() {
         return locationType;

@@ -48,11 +48,17 @@ public class TravellerController {
             travellerService.save(traveller);
 
             System.out.println("-----------------signIn------------------------");
-            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
-            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
+//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
+//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
+
+            TripChoices newTrip = new TripChoices();
+            Integer travellerId = travellerService.getTravellerByEmail(traveller.getEmail()).getId();
+            newTrip.setTravellerId(travellerId);
 
             model.addAttribute("traveller", traveller.getFirstName());
-            model.addAttribute("tripchoices", new TripChoices());
+            model.addAttribute("traveller_id", travellerId);
+            model.addAttribute("tripchoices", newTrip);
+
             return "welcome-traveller";
         }
 
@@ -65,12 +71,20 @@ public class TravellerController {
         if (validateLogIn(traveller)) {
 
             System.out.println("-------------------logIn----------------------");
-            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
-            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
+//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
+//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
+//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getId() + "\n");
+
+            TripChoices newTrip = new TripChoices();
+            Integer travellerId = travellerService.getTravellerByEmail(traveller.getEmail()).getId();
+            newTrip.setTravellerId(travellerId);
 
             model.addAttribute("traveller", traveller.getFirstName());
-            model.addAttribute("tripchoices", new TripChoices());
-            //ADD to model traveller.id
+            model.addAttribute("tripchoices", newTrip);
+            model.addAttribute("traveller_id", newTrip.getTravellerId());
+
+
+
 
             return "welcome-traveller";
         }
@@ -86,7 +100,9 @@ public class TravellerController {
         return validate(input[0]) && input[0].equals(input[1]);
     }
 
-    private boolean validateNewEmail (String input) { return validate(input) && travellerService.getTravellerByEmail(input) == null; }
+    private boolean validateNewEmail (String input) {
+        return validate(input) && travellerService.getTravellerByEmail(input) == null;
+    }
 
     private boolean validateLogIn (Traveller traveller) {
 

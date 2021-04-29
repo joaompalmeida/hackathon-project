@@ -24,24 +24,25 @@
                             <p> </p>
                         </div>
 
+                        <input type="hidden" th:field="${traveller_id}"/>
 
                         <form class="form" th:object="${tripchoices}" th:action="@{'/trip'}" method="post">
 
-                            <select class="form-control" id="goal" th:field="*{locationGoal}">
+                            <select class="form-control" id="goal" required="required" th:field="*{locationGoal}">
                                 <option value="">What type of trip?</option>
                                 <option value="culture">Culture</option>
                                 <option value="relaxation">Relaxation</option>
                                 <option value="action">Action</option>
                             </select>
                             <br><br>
-                            <select class="form-control" id="type" th:field="*{locationType}">
+                            <select class="form-control" id="type"  required="required" th:field="*{locationType}">
                                 <option value="">Where is the scenery?</option>
                                 <option value="urban">Urban</option>
                                 <option value="beach">Beach</option>
                                 <option value="countryside">Countryside</option>
                             </select>
                             <br><br>
-                            <select class="form-control" id="budget" th:field="*{budget}">
+                            <select class="form-control" id="budget"  required="required" th:field="*{budget}">
                                 <option value="" >How's the budget?</option>
                                 <option value="low">Low</option>
                                 <option value="mid">Mid</option>
