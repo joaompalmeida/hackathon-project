@@ -8,12 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="trolo-saveller" />
         <module name="hackathon-project" />
+        <module name="inablink" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="hackathon-project" options="-bootclasspath /home/jose/.jdks/openjdk-15.0.2/lib/rt.jar:/home/jose/.jdks/openjdk-15.0.2/lib/jce.jar:/home/jose/.jdks/openjdk-15.0.2/../lib/tools.jar" />
+      <module name="hackathon-project" options="-bootclasspath $PROJECT_DIR$/../../../../jose/.jdks/openjdk-15.0.2/lib/rt.jar:$PROJECT_DIR$/../../../../jose/.jdks/openjdk-15.0.2/lib/jce.jar:$PROJECT_DIR$/../../../../jose/.jdks/openjdk-15.0.2/../lib/tools.jar" />
       <module name="trolo-saveller" options="" />
     </option>
   </component>

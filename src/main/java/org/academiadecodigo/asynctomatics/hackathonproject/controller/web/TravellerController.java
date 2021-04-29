@@ -70,6 +70,7 @@ public class TravellerController {
 
             model.addAttribute("traveller", traveller.getFirstName());
             model.addAttribute("tripchoices", new TripChoices());
+            //ADD to model traveller.id
 
             return "welcome-traveller";
         }
