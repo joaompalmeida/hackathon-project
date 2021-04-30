@@ -1,7 +1,9 @@
 package org.academiadecodigo.asynctomatics.hackathonproject.controller.web;
 
 import org.academiadecodigo.asynctomatics.hackathonproject.controller.TripChoices;
+import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Traveller;
 import org.academiadecodigo.asynctomatics.hackathonproject.persistence.model.Trip;
+import org.academiadecodigo.asynctomatics.hackathonproject.services.TravellerService;
 import org.academiadecodigo.asynctomatics.hackathonproject.services.TripService;
 import org.academiadecodigo.asynctomatics.hackathonproject.services.TripServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,12 @@ import java.util.List;
 public class TripControllerWeb {
 
     private TripService tripService;
+    private TravellerService travellerService;
+
+    @Autowired
+    public void setTravellerService(TravellerService travellerService) {
+        this.travellerService = travellerService;
+    }
 
     @Autowired
     public void setTripService(TripService tripService) {
@@ -35,34 +43,36 @@ public class TripControllerWeb {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String tripForm(Model model) {
-
-//        System.out.println("\nTRIP FORM\n");
-//        System.out.println("test id " + model.containsAttribute("traveller_id"));
-//
-//        model.addAttribute("tripchoices", new TripChoices());
-//        //model.addAttribute("traveller", "John");
-//
-//        return "redirect/welcome-traveller";
         return "redirect:/in";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/", ""})
     public String tripChoices(@Valid @ModelAttribute("tripchoices") TripChoices tripChoices, Model model) {
 
-        System.out.println("\nTRIP CHOICES\n");
-        System.out.println("test id " + model.containsAttribute("traveller_id"));
-        tripService.createTripList(tripChoices);
+        System.out.println("\n-------TRIP CHOICES-------\n");
 
-        model.addAttribute("trip", tripService.getTrip(0));
-        model.addAttribute("counter", "0");
+        if (tripChoices.getTravellerId() > 0) {
+            tripService.createTripList(tripChoices);
 
-        return "roulette";
+            model.addAttribute("trip", tripService.getTrip(0));
+            model.addAttribute("counter", "0");
+            model.addAttribute("traveller", travellerService.getTravellerById(tripChoices.getTravellerId()));
+
+            return "roulette";
+        }
+
+        return "redirect:/in";
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/roulette/{n}")
-    public String tripRoulette(@PathVariable Integer n, Model model) {
+    @RequestMapping(method = RequestMethod.GET, path = {"/roulette",  "/roulette/{n}"})
+    public String tripRouletteGet(Model model) {
+        return "redirect:/in";
+    }
 
-        System.out.println("\nROULETTE: " + n + "\n");
+    @RequestMapping(method = RequestMethod.POST, path = "/roulette/{n}")
+    public String tripRoulette(@Valid @ModelAttribute("traveller") Traveller traveller, @PathVariable Integer n, Model model) {
+
+        System.out.println("\n-------ROULETTE: " + n + "--------\n");
 
         if (n >= 2) {
             return "nextweek";
@@ -70,22 +80,24 @@ public class TripControllerWeb {
 
         model.addAttribute("trip", tripService.getTrip(++n));
         model.addAttribute("counter", (n) + "");
+        model.addAttribute("traveller", traveller);
 
         return "roulette";
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/roulette/pay/{n}")
-    public String tripPay(@PathVariable Integer n, Model model) {
+    public String tripPay(@Valid @ModelAttribute("traveller") Traveller traveller, @PathVariable Integer n, Model model) {
 
         System.out.println("\nPay: " + tripService.getTrip(n) + "\n");
 
         model.addAttribute("counter", (n) + "");
+        model.addAttribute("traveller", traveller);
 
         return "payment";
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/roulette/pay/{n}")
-    public String tripGo(@PathVariable Integer n, Model model) {
+    public String tripGo(@Valid @ModelAttribute("traveller") Traveller traveller, @PathVariable Integer n, Model model) {
 
         System.out.println("\nGO: " + tripService.getTrip(n) + "\n");
 

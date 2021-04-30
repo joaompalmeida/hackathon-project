@@ -1,14 +1,5 @@
 ﻿﻿
-  /*!
-  * Created by Kroplet (https://www.kroplet.com)
-  * The easiest way to create Bootstrap 4 themes.
-  */
 
-  /*!
-  * Bootstrap v4.1.0 (https://getbootstrap.com)
-  * Copyright 2011-2017 The Bootstrap Authors
-  * Copyright 2011-2017 Twitter, Inc.
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/
 :root {
 
   --teal: #1de9b6;
@@ -1306,7 +1297,6 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #263238;
   background-clip: border-box;
   border: 0px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.3rem; }
@@ -2541,7 +2531,7 @@ button.bg-light:focus {
   background-color: #cfd6db !important; }
 
 .bg-dark {
-  background-color: #11171a !important; }
+  background-color: black !important; }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
@@ -5429,8 +5419,8 @@ a.text-dark:hover, a.text-dark:focus {
 
   .section-angle {
     position: relative;
-    border-color: #11171a;
-    background: #11171a; }
+    border-color: black;
+    background: black; }
   .section-angle:before, .section-angle:after {
     width: 0;
     height: 0;
@@ -5798,4 +5788,5 @@ a.text-dark:hover, a.text-dark:focus {
     .switcher-wrap {
       display: none; }
   }
+
 }

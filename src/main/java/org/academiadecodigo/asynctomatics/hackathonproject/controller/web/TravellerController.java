@@ -48,15 +48,12 @@ public class TravellerController {
             travellerService.save(traveller);
 
             System.out.println("-----------------signIn------------------------");
-//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
-//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
 
             TripChoices newTrip = new TripChoices();
             Integer travellerId = travellerService.getTravellerByEmail(traveller.getEmail()).getId();
             newTrip.setTravellerId(travellerId);
 
             model.addAttribute("traveller", traveller.getFirstName());
-            model.addAttribute("traveller_id", travellerId);
             model.addAttribute("tripchoices", newTrip);
 
             return "welcome-traveller";
@@ -71,9 +68,6 @@ public class TravellerController {
         if (validateLogIn(traveller)) {
 
             System.out.println("-------------------logIn----------------------");
-//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()) + "\n");
-//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getFirstName() + "\n");
-//            System.out.println("\n" + travellerService.getTravellerByEmail(traveller.getEmail()).getId() + "\n");
 
             TripChoices newTrip = new TripChoices();
             Integer travellerId = travellerService.getTravellerByEmail(traveller.getEmail()).getId();
@@ -81,10 +75,6 @@ public class TravellerController {
 
             model.addAttribute("traveller", traveller.getFirstName());
             model.addAttribute("tripchoices", newTrip);
-            model.addAttribute("traveller_id", newTrip.getTravellerId());
-
-
-
 
             return "welcome-traveller";
         }

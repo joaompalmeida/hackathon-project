@@ -20,9 +20,9 @@
     <title>In a Blink</title>
 </head>
 
-<body>
-<section class="py-7 bg-dark section-angle top-right bottom-right" id="pricing" style="background-color: #11171a">
-    <div class="container" style="background-color: #11171a">
+<body style="background-color: black">
+<section class="py-7 bg-dark section-angle top-right bottom-right" id="pricing">
+    <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto text-center">
                 <h2 class="text-white heading-black">Your Blink Roulette</h2>
@@ -33,14 +33,17 @@
             <div class="col-12 mx-auto">
                 <div class="card-deck pricing-table">
                     <div class="card">
-                        <div class="card-body" style="display: flex; align-items: center; justify-content: flex-end; background-color: #11171a">
-                            <a id="save-button" class="btn btn-primary" th:href="@{'/trip/roulette/' + ${counter}}" type="button">
-                                stay
-                            </a>
+                        <div class="card-body" style="display: flex; align-items: center; justify-content: flex-end;">
+                            <form class="testing" th:object="${traveller}" th:action="@{'/trip/roulette/' + ${counter}}" method="post">
+                                <input type="hidden" th:field="*{Id}"/>
+                                <button type="submit" id="save-button" class="btn btn-primary" name="action" value="submit">
+                                    stay
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body" style="align-items:center; background-color: #11171a">
+                        <div class="card-body" style="align-items:center;">
                             <div class="trip-roulette">
                                 <div class="circle__content" th:object="${trip}">
 
@@ -56,10 +59,13 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body" style="display: flex; align-items: center; justify-content: flex-start; background-color: #11171a">
-                            <a class="btn btn-primary" th:href="@{'/trip/roulette/pay/' + ${counter}}" type="button">
-                                GO
-                            </a>
+                        <div class="card-body" style="display: flex; align-items: center; justify-content: flex-start;">
+                            <form th:object="${traveller}" th:action="@{'/trip/roulette/pay/' + ${counter}}" method="post">
+                                <input type="hidden" th:field="*{Id}"/>
+                                <button type="submit" id="save-button" class="btn btn-primary" name="action" value="submit">
+                                    GO
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>

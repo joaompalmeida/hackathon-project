@@ -24,10 +24,10 @@
                             <p> </p>
                         </div>
 
-                        <input type="hidden" th:field="${traveller_id}"/>
+
 
                         <form class="form" th:object="${tripchoices}" th:action="@{'/trip'}" method="post">
-
+                            <input type="hidden" th:field="*{travellerId}"/>
                             <select class="form-control" id="goal" required="required" th:field="*{locationGoal}">
                                 <option value="">What type of trip?</option>
                                 <option value="culture">Culture</option>

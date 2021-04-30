@@ -10,10 +10,6 @@ public class TripChoices {
     private String locationGoal;
     private String budget;
 
-//    public TripChoices(Integer customerId){
-//        setTravellerId(customerId);
-//    }
-
     public void setTravellerId(int travellerId) {
         this.travellerId = travellerId;
     }
